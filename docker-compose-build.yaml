@@ -1,0 +1,18 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: ./udagram-reverseproxy
+    image: aramos90/reverseproxy:v1
+  backend_user:
+    build:
+      context: ./udagram-api-user
+    image: aramos90/udagram-api-user:v1
+  backend_feed:
+    build:
+      context: ./udagram-api-feed
+    image: aramos90/udagram-api-feed:v1
+  frontend:
+    build:
+      context: ./udagram-frontend
+    image: aramos90/udagram-frontend:v1
