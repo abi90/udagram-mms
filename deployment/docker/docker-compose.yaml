@@ -20,6 +20,8 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
+      NODE_TLS_REJECT_UNAUTHORIZED: $NODE_TLS_REJECT_UNAUTHORIZED
+      PGSSLMODE: $PGSSLMODE
   backend-feed:
     image: udagram-api-feed
     volumes:
@@ -34,7 +36,9 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
+      NODE_TLS_REJECT_UNAUTHORIZED: $NODE_TLS_REJECT_UNAUTHORIZED
+      PGSSLMODE: $PGSSLMODE
   frontend:
-    image: udagram-frontend:local
+    image: udagram-frontend
     ports:
       - "8100:80"
